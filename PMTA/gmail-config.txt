@@ -1,0 +1,20 @@
+<domain gmail.com>         
+   dk-sign yes
+   dkim-sign yes
+   log-transfer-failures no
+   log-connections no
+   log-commands no
+   retry-after 1s
+   bounce-after 24h
+   max-smtp-out 1200
+   max-msg-per-connection unlimited  # at most 20/connection allowed
+   smtp-pattern-list gmail_errors
+   max-msg-rate unlimited
+</domain>
+
+<smtp-pattern-list gmail_errors>
+   reply /too many connections/ skip-mx
+   reply /Server busy/ skip-mx
+   reply /Temporary System Problem/ skip-mx
+   reply /421 4.7.0/ skip-mx
+</smtp-pattern-list>

@@ -1,0 +1,17 @@
+domain-macro hotmail hotmail, msn, live, outlook
+domain-macro htld com, de, co.uk, es
+
+<domain $hotmail.$htld>
+   queue-to hotmail.queue 
+</domain>
+<domain hotmail.queue>             
+   route hotmail.com    
+   dk-sign no
+   dkim-sign no          
+   log-transfer-failures no
+   log-connections no      
+   log-commands no 
+   bounce-after 24h
+   max-smtp-out 10               
+   max-msg-per-connection 100   
+</domain>

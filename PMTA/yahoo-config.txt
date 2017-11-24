@@ -1,0 +1,20 @@
+domain-macro yahoo yahoo, ymail, rocketmail
+domain-macro htld com, de, es
+
+<domain $yahoo.$htld>
+ queue-to yahoo.queue
+</domain>
+<domain yahoo.queue>
+   route yahoo.com
+   dk-sign no
+   dkim-sign no
+   max-smtp-out 1200
+   max-msg-per-connection 200
+   #retry-after 1m
+   #backoff-retry-after 2m
+   #backoff-to-normal-after-delivery true
+   #log-transfer-failures no
+   #log-connections no
+   #log-commands no
+   #smtp-pattern-list yahoo_errors
+</domain>

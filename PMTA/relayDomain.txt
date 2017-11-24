@@ -1,0 +1,2 @@
+relay-domain townindoor.xyz
+relay-domain maroc.townindoor.xyz

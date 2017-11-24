@@ -1,0 +1,52 @@
+#_____LOCAL___________
+<source 149.56.103.207>
+	always-allow-relaying yes
+	smtp-service yes
+	log-connections no
+	log-commands no
+	process-x-envid true
+	process-x-job true
+	process-x-virtual-mta yes
+	add-received-header no
+	allow-mailmerge true
+</source>
+
+#_____LOCAL___________
+<source 212.117.213.172>
+	always-allow-relaying yes
+	smtp-service yes
+	log-connections no
+	log-commands no
+	process-x-envid true
+	process-x-job true
+	process-x-virtual-mta yes
+	add-received-header no
+	allow-mailmerge true
+</source>
+
+#_____CENTRAL___________
+<source 212.117.213.137>
+	always-allow-relaying yes
+	smtp-service yes
+	log-connections no
+	log-commands no
+	process-x-envid true
+	process-x-job true
+	process-x-virtual-mta yes
+	add-received-header no
+	allow-mailmerge true
+</source>
+
+#_____CENTRAL___________
+<source 212.117.213.172>
+	always-allow-relaying yes
+	smtp-service yes
+	log-connections no
+	log-commands no
+	process-x-envid true
+	process-x-job true
+	process-x-virtual-mta yes
+	add-received-header no
+	allow-mailmerge true
+</source>
+

@@ -1,0 +1,12 @@
+<virtual-mta mta-149.56.103.207>
+	smtp-source-ip 149.56.103.207
+	host-name townindoor.xyz
+	domain-key cle,townindoor.xyz,/etc/pmta/domainKeys/cle.townindoor.xyz.pem
+</virtual-mta>
+
+<virtual-mta mta-212.117.213.172>
+	smtp-source-ip 212.117.213.172
+	host-name maroc.townindoor.xyz
+	domain-key cle,maroc.townindoor.xyz,/etc/pmta/domainKeys/cle.townindoor.xyz.pem
+</virtual-mta>
+

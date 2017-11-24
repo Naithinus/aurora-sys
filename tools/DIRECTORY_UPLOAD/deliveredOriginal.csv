@@ -1,0 +1,1 @@
+type,jobId,timeLogged,timeQueued,orig,orcpt,dsnAction,dsnStatus,dsnDiag,dsnMta,srcType,srcMta,dlvType,dlvSourceIp,dlvDestinationIp,dlvSize,vmta,envId

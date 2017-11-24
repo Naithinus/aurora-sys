@@ -1,0 +1,33 @@
+domain-macro aol aol, aim, cs, netscape, wmconnect, icqmail, luckymail, compuserve
+domain-macro atld com, de, co.uk, es, net, fr
+
+<smtp-pattern-list aol_errors>
+#reply /DYN:T1/ skip-mx
+#reply /Service unavailable/ skip-mx
+#reply /CON:B1/  mode=backoff, disable-source-ip,reenable-after=24h
+#reply /ESMTP not accepting connections/  mode=backoff, disable-source-ip,reenable-after=1h
+#reply /RLY:B1/  mode=backoff, disable-source-ip,reenable-after=24h
+#reply /AOL will not accept delivery of this message/  mode=backoff, disable-source-ip,reenable-after=24h
+#reply /HVU:B2/  mode=backoff, disable-source-ip,reenable-after=24h
+</smtp-pattern-list>
+
+<domain $aol.$atld>
+   queue-to aol.queue
+</domain>
+<domain aol.queue>
+	route aol.com
+	dk-sign no
+	dkim-sign no
+	log-transfer-failures no
+	log-connections no
+	log-commands no
+	retry-after 1m
+	bounce-after 24h
+	max-smtp-out 10
+	max-msg-per-connection unlimited
+	backoff-to-normal-after 2h
+	backoff-max-msg-rate  600/h
+	backoff-retry-after  2h
+	backoff-to-normal-after-delivery true
+	smtp-pattern-list aol_errors
+</domain>

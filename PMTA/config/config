@@ -1,0 +1,63 @@
+
+			include /var/www/exactarget/PMTA/http.txt
+
+			include /var/www/exactarget/PMTA/hostName.txt
+
+			include /var/www/exactarget/PMTA/relayDomain.txt
+
+			include /var/www/exactarget/PMTA/smtpListener.txt
+
+			include /var/www/exactarget/PMTA/vmta.txt
+
+			include /var/www/exactarget/PMTA/source.txt
+
+
+
+			log-file /var/log/pmta/log
+			spool   /var/spool/pmta
+
+			include /var/www/exactarget/PMTA/gmail-config.txt
+
+			include /var/www/exactarget/PMTA/aol-config.txt
+
+			include /var/www/exactarget/PMTA/hotmail-config.txt
+
+			include /var/www/exactarget/PMTA/yahoo-config.txt
+
+
+
+
+			<acct-file /var/log/pmta/acct-bounced.csv>
+					records b
+					max-size 50M
+					#move-to /opt/pmta/pmta-acct-old-bounced
+					record-fields b jobId,dsnDiag,*,!timeImprinted,!dlvEsmtpAvailable,!rcpt
+			</acct-file>
+
+
+			<acct-file /var/log/pmta/totalBounced.csv>
+					records b
+					max-size 50M
+					#move-to /opt/pmta/pmta-acct-old-bounced
+					record-fields b jobId,dsnDiag,*,!timeImprinted,!dlvEsmtpAvailable,!rcpt
+			</acct-file>
+
+
+
+
+			<acct-file /var/log/pmta/acct-delivered.csv>
+					records d
+					max-size 50M
+					#move-to /opt/pmta/pmta-acct-old-delivered
+					record-fields d jobId,*,!timeImprinted,!dlvEsmtpAvailable,!rcpt
+			</acct-file>
+
+
+
+			<acct-file /var/log/pmta/acct-recieved.csv>
+					records r
+					record-fields r *,!rcpt
+					max-size 50M
+					#move-to /opt/pmta/pmta-acct-old-recieved,!rcpt
+			</acct-file>
+		

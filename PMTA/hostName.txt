@@ -1,0 +1,2 @@
+host-name townindoor.xyz
+host-name maroc.townindoor.xyz
